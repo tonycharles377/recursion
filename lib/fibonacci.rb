@@ -26,4 +26,14 @@ def fibs(n)
     end
 end
 
+# recursive aproach
+def fibs_rec(n, arr = [0, 1])
+    return arr.take(n) if arr.length >= n
+
+    arr << arr[-2] + arr[-1]
+
+    fibs_rec(n, arr)
+end
+
 p fibs(20)
+p fibs_rec(1)
